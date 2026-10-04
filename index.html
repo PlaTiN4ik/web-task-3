@@ -6,6 +6,10 @@
     <title>Задание №3</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    // Устанавливаем ограничение макс. даты на сегодня
+    document.getElementById('dob').max = new Date().toISOString().split('T')[0];
+</script>
 <body>
 
     <!-- Шапка -->
@@ -126,89 +130,91 @@
             </div>
         </section>
 
-        <!-- 3. Потоковый третий блок: Форма -->
-        <section id="form-section" class="content-block form-block">
-            <h2>Форма обратной связи</h2>
-            <form action="#" method="post">
-                <p>
-                    <label for="fullname">ФИО:</label>
-                    <input 
-                        type="text" 
-                        id="fullname"
-                        name="fullname" 
-                        placeholder="Иванов Иван Иванович" 
-                        pattern="[A-Za-zА-Яа-яЁё\s\-]+" 
-                        title="Разрешены только буквы" 
-                        inputmode="text"
-                        oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s\-]/g, '');"
-                        required
-                    >
-                </p>
+<section id="form-section" class="content-block form-block">
+    <h2>Форма обратной связи</h2>
+    <form action="#" method="post">
+        <p>
+            <label for="fullname">ФИО:</label>
+            <input 
+                type="text" 
+                id="fullname"
+                name="fullname" 
+                placeholder="Иванов Иван Иванович" 
+                pattern="[A-Za-zА-Яа-яЁё\s\-]+" 
+                title="Разрешены только буквы" 
+                inputmode="text"
+                oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s\-]/g, '');"
+                required
+            >
+        </p>
 
-                <p>
-                    <label for="phone">Телефон:</label>
-                    <input 
-                        type="tel" 
-                        id="phone"
-                        name="phone" 
-                        placeholder="+7 (999) 000-00-00" 
-                        pattern="[\+0-9\s\-\(\)]+" 
-                        title="Разрешены только цифры и знаки +, -, скобки" 
-                        inputmode="tel"
-                        oninput="this.value = this.value.replace(/[^0-9\+\-\(\)\s]/g, '');"
-                        required
-                    >
-                </p>
+        <p>
+            <label for="phone">Телефон:</label>
+            <input 
+                type="tel" 
+                id="phone"
+                name="phone" 
+                placeholder="+7 (999) 000-00-00" 
+                pattern="[\+0-9\s\-\(\)]+" 
+                title="Разрешены только цифры и знаки +, -, скобки" 
+                inputmode="tel"
+                oninput="this.value = this.value.replace(/[^0-9\+\-\(\)\s]/g, '');"
+                required
+            >
+        </p>
 
-                <p>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
-                </p>
+        <p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+        </p>
 
-                <p>
-                    <label for="dob">Дата рождения:</label>
-                    <input type="date" id="dob" name="dob" value="2005-01-01" required>
-                </p>
+        <p>
+            <label for="dob">Дата рождения:</label>
+            <input type="date" id="dob" name="dob" value="2005-01-01" max="2026-10-04" required>
+        </p>
 
-                <p>
-                    Пол:<br>
-                    <label><input type="radio" name="gender" value="male" checked> Мужской</label>
-                    <label><input type="radio" name="gender" value="female"> Женский</label>
-                </p>
+        <p>
+            Пол:<br>
+            <label><input type="radio" name="gender" value="male" checked> Мужской</label>
+            <label><input type="radio" name="gender" value="female"> Женский</label>
+        </p>
 
-                <p>
-                    <label for="languages">Любимый язык программирования:</label>
-                    <select id="languages" name="languages[]" multiple size="6" required>
-                        <option value="pascal">Pascal</option>
-                        <option value="c">C</option>
-                        <option value="cpp">C++</option>
-                        <option value="js">JavaScript</option>
-                        <option value="php">PHP</option>
-                        <option value="python">Python</option>
-                        <option value="java">Java</option>
-                        <option value="haskel">Haskel</option>
-                        <option value="clojure">Clojure</option>
-                        <option value="prolog">Prolog</option>
-                        <option value="scala">Scala</option>
-                    </select>
-                </p>
+        <p>
+            <label for="languages">
+                Любимый язык программирования:<br>
+                <small style="color: #666; font-weight: normal;">(для выбора нескольких зажмите Ctrl )</small>
+            </label>
+            <select id="languages" name="languages[]" multiple size="6" required>
+                <option value="pascal">Pascal</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="js">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="haskel">Haskel</option>
+                <option value="clojure">Clojure</option>
+                <option value="prolog">Prolog</option>
+                <option value="scala">Scala</option>
+            </select>
+        </p>
 
-                <p>
-                    <label for="bio">Биография:</label>
-                    <textarea id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
-                </p>
+        <p>
+            <label for="bio">Биография:</label>
+            <textarea id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
+        </p>
 
-                <p>
-                    <label>
-                        <input type="checkbox" name="contract" required> С контрактом ознакомлен(а)
-                    </label>
-                </p>
+        <p>
+            <label>
+                <input type="checkbox" name="contract" required> С контрактом ознакомлен(а)
+            </label>
+        </p>
 
-                <p>
-                    <input type="submit" value="Сохранить">
-                </p>
-            </form>
-        </section>
+        <p>
+            <input type="submit" value="Сохранить">
+        </p>
+    </form>
+</section>
     </main>
 
     <!-- Подвал -->
