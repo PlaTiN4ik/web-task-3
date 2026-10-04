@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo-title-block">
+                <img src="Logotip.jpg" alt="Логотип КубГУ" class="logo-img">
+                <h1 class="site-title">Кубанский Гос. Университет</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#links-section">Ссылки</a></li>
+                    <li><a href="#table-section">Таблица</a></li>
+                    <li><a href="#form-section">Форма</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- 1. Потоковый первый блок: Ссылки -->
+        <section id="links-section" class="content-block links-block">
+            <h2>Список гиперссылок</h2>
+            <ul>
+                <li><a href="http://kubsu.ru/">1. Абсолютная ссылка на главную страницу kubsu.ru (http)</a></li>
+                <li><a href="https://kubsu.ru/">2. Абсолютная ссылка на главную страницу kubsu.ru (https)</a></li>
+                <li>
+                    <a href="https://kubsu.ru/">
+                        <img src="Logotip.jpg" alt="Логотип КубГУ" width="120" height="120">
+                    </a>
+                </li>
+                <li><a href="/about.html">4. Сокращенная ссылка на внутреннюю страницу</a></li>
+                <li><a href="/">5. Сокращенная ссылка на главную страницу</a></li>
+                <li><a href="#anchor-section">6. Ссылка на фрагмент текущей страницы</a></li>
+                <li><a href="https://example.com/page?param1=val1&amp;param2=val2&amp;param3=val3">7. Ссылка с 3 параметрами в URL</a></li>
+                <li><a href="https://example.com/page?id=123">8. Ссылка с параметром id в URL</a></li>
+                <li><a href="in_that_katalog.html">9. Относительная на страницу в текущем каталоге</a></li>
+                <li><a href="about/about.html">10. Относительная на страницу в каталоге about</a></li>
+                <li><a href="../page.html">11. Относительная на страницу уровнем выше</a></li>
+                <li><a href="../../page.html">12. Относительная на страницу двумя уровнями выше</a></li>
+                <li>13. Это абзац текста, в котором есть <a href="https://kubsu.ru/">контекстная ссылка</a> на сайт КубГУ.</li>
+                <li><a href="https://ru.wikipedia.org/wiki/HTML#История">14. Ссылка на фрагмент страницы стороннего сайта</a></li>
+                <li>
+                    15. Ссылка на фрагмент изображения <br>
+                    <img src="map.png" alt="Интерактивная карта" usemap="#myMap" style="max-width: 100%; height: auto; display: block; margin-top: 8px;">
+                    <map name="myMap">
+                        <area shape="rect" coords="12,81,372,261" href="https://kubsu.ru/" alt="Прямоугольник" title="Переход на КубГУ">
+                        <area shape="circle" coords="703,170,90" href="https://example.com/" alt="Круг" title="Переход на Example">
+                    </map>
+                </li>
+                <li><a href="">16. Ссылка с пустым href</a></li>
+                <li><a>17. Ссылка без href</a></li>
+                <li><a href="https://example.com" rel="nofollow">18. Ссылка, по которой запрещен переход поисковикам (nofollow)</a></li>
+                <li><a href="https://example.com/" rel="noindex">19. Ссылка, запрещенная для индексации (noindex)</a></li>
+                <li>
+                    20. Нумерованный список ссылок с атрибутом title:
+                    <ol style="margin-top: 4px; margin-bottom: 4px;">
+                        <li><a href="https://kubsu.ru/" title="Официальный сайт КубГУ">КубГУ</a></li>
+                        <li><a href="https://example.com/" title="Демонстрационный сайт Example">Example</a></li>
+                    </ol>
+                </li>
+                <li><a href="ftp://host/file.txt">21. Ссылка на файл на FTP-сервере с авторизацией</a></li>
+            </ul>
+        </section>
+
+        <!-- 2. Потоковый второй блок: Таблица -->
+        <section id="table-section" class="content-block table-block">
+            <h2>Таблица данных</h2>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>ФИО студента</th>
+                            <th>Группа</th>
+                            <th>Оценка</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">1</td>
+                            <td>Иванов Иван Иванович</td>
+                            <td>ПИ-201</td>
+                            <td>Отлично</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><em>Примечание: Староста группы</em></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Петров Петр Петрович</td>
+                            <td>ПИ-201</td>
+                            <td>Хорошо</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Сидоров Сидор Сидорович</td>
+                            <td>ПИ-201</td>
+                            <td>Отлично</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Алексеев Алексей Алексеевич</td>
+                            <td>ПИ-202</td>
+                            <td>Зачет</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Васильев Василий Васильевич</td>
+                            <td>ПИ-202</td>
+                            <td>Хорошо</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. Потоковый третий блок: Форма -->
+        <section id="form-section" class="content-block form-block">
+            <h2>Форма обратной связи</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="fullname">ФИО:</label>
+                    <input 
+                        type="text" 
+                        id="fullname"
+                        name="fullname" 
+                        placeholder="Иванов Иван Иванович" 
+                        pattern="[A-Za-zА-Яа-яЁё\s\-]+" 
+                        title="Разрешены только буквы" 
+                        onkeydown="return /[a-zA-Zа-яА-ЯёЁ\s\-]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+                        required
+                    >
+                </p>
+                <p>
+                    <label for="phone">Телефон:</label>
+                    <input 
+                        type="tel" 
+                        id="phone"
+                        name="phone" 
+                        placeholder="+7 (999) 000-00-00" 
+                        pattern="[\+0-9\s\-\(\)]+" 
+                        title="Разрешены только цифры и знаки +, -, скобки" 
+                        onkeydown="return /[0-9\+\-\(\)\s]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+                </p>
+
+                <p>
+                    <label for="dob">Дата рождения:</label>
+                    <input type="date" id="dob" name="dob" value="2005-01-01" required>
+                </p>
+
+                <p>
+                    Пол:<br>
+                    <label><input type="radio" name="gender" value="male" checked> Мужской</label>
+                    <label><input type="radio" name="gender" value="female"> Женский</label>
+                </p>
+
+                <p>
+                    <label for="languages">Любимый язык программирования:</label>
+                    <select id="languages" name="languages[]" multiple size="6" required>
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="js">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskel">Haskel</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="bio">Биография:</label>
+                    <textarea id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" name="contract" required> С контрактом ознакомлен(а)
+                    </label>
+                </p>
+
+                <p>
+                    <input type="submit" value="Сохранить">
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer id="anchor-section">
+        <div class="footer-container">
+            <p>(c) Сергей Синица 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
