@@ -52,7 +52,7 @@
                 <li>
                     15. Ссылка на фрагмент изображения <br>
                     <div class="map-wrapper">
-                        <img src="map.png" alt="Интерактивная карта" usemap="#myMap">
+                        <img src="map.png" alt="Интерактивная карта" usemap="#myMap" id="map-image">
                     </div>
                     <map name="myMap">
                         <area shape="rect" coords="12,81,372,261" href="https://kubsu.ru/" alt="Прямоугольник" title="Переход на КубГУ">
@@ -218,5 +218,34 @@
         </div>
     </footer>
 
+    <!-- Скрипт для адаптива координат интерактивной карты -->
+    <script>
+        function resizeMap() {
+            const img = document.getElementById('map-image');
+            const areas = document.querySelectorAll('map[name="myMap"] area');
+            if (!img || !areas.length) return;
+
+            if (!img.dataset.coords) {
+                areas.forEach(area => {
+                    area.dataset.originalCoords = area.coords;
+                });
+                img.dataset.coords = 'saved';
+            }
+
+            const naturalWidth = img.naturalWidth;
+            if (!naturalWidth) return;
+
+            const scale = img.clientWidth / naturalWidth;
+
+            areas.forEach(area => {
+                const orig = area.dataset.originalCoords.split(',').map(Number);
+                const scaled = orig.map(val => Math.round(val * scale));
+                area.coords = scaled.join(',');
+            });
+        }
+
+        window.addEventListener('load', resizeMap);
+        window.addEventListener('resize', resizeMap);
+    </script>
 </body>
 </html>
