@@ -125,15 +125,16 @@ ul, ol {
     padding-left: 20px;
 }
 
-/* Контейнер для кликабельной интерактивной карты */
+/* Контейнер и адаптив для интерактивной карты */
 .map-wrapper {
-    overflow-x: auto;
-    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
     margin-top: 8px;
 }
 
 .map-wrapper img {
-    max-width: none;
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
