@@ -96,7 +96,7 @@ nav a:hover {
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    word-break: break-word; /* чтобы длинные ссылки не ломали мобильный экран */
+    word-break: break-word;
 }
 
 /* --- ПУНКТ 3 ЗАДАНИЯ: Flex Box order на мобильных --- */
@@ -125,7 +125,19 @@ ul, ol {
     padding-left: 20px;
 }
 
-/* Таблица на мобильных (добавлен скролл, если не вмещается) */
+/* Контейнер для кликабельной интерактивной карты */
+.map-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+    margin-top: 8px;
+}
+
+.map-wrapper img {
+    max-width: none;
+    display: block;
+}
+
+/* Таблица на мобильных (добавлен горизонтальный скролл) */
 .table-wrapper {
     overflow-x: auto;
 }

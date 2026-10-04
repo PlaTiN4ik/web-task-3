@@ -51,7 +51,9 @@
                 <li><a href="https://ru.wikipedia.org/wiki/HTML#История">14. Ссылка на фрагмент страницы стороннего сайта</a></li>
                 <li>
                     15. Ссылка на фрагмент изображения <br>
-                    <img src="map.png" alt="Интерактивная карта" usemap="#myMap" style="max-width: 100%; height: auto; display: block; margin-top: 8px;">
+                    <div class="map-wrapper">
+                        <img src="map.png" alt="Интерактивная карта" usemap="#myMap">
+                    </div>
                     <map name="myMap">
                         <area shape="rect" coords="12,81,372,261" href="https://kubsu.ru/" alt="Прямоугольник" title="Переход на КубГУ">
                         <area shape="circle" coords="703,170,90" href="https://example.com/" alt="Круг" title="Переход на Example">
@@ -137,10 +139,12 @@
                         placeholder="Иванов Иван Иванович" 
                         pattern="[A-Za-zА-Яа-яЁё\s\-]+" 
                         title="Разрешены только буквы" 
-                        onkeydown="return /[a-zA-Zа-яА-ЯёЁ\s\-]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+                        inputmode="text"
+                        oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s\-]/g, '');"
                         required
                     >
                 </p>
+
                 <p>
                     <label for="phone">Телефон:</label>
                     <input 
@@ -150,7 +154,8 @@
                         placeholder="+7 (999) 000-00-00" 
                         pattern="[\+0-9\s\-\(\)]+" 
                         title="Разрешены только цифры и знаки +, -, скобки" 
-                        onkeydown="return /[0-9\+\-\(\)\s]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+                        inputmode="tel"
+                        oninput="this.value = this.value.replace(/[^0-9\+\-\(\)\s]/g, '');"
                         required
                     >
                 </p>
